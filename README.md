@@ -18,6 +18,10 @@ With both the website and the stub server running, run the cypress tests with:
 
 npm run e2e
 
+## Running the React-Testing-Library unit tests
+
+npm run test
+
 ## Styling
 
 Styling is encapsulated into each component using Material UI rather than with CSS
