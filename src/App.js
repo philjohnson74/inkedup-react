@@ -1,8 +1,19 @@
+import {useEffect, useState} from "react";
 import { Typography } from "@material-ui/core";
+import axios from 'axios';
 import PenList from "./PenList";
 
-function App() {
-    const pens = [{ displayName: "Montblanc Starwalker Urban Spirit"}, { displayName: "Platinum President"}];
+const App = () => {
+    const [pens, setPens] = useState([]);
+
+    useEffect(() => {
+        const fetchPens = async () => {
+            const result = await axios.get("http://localhost:8080/pens");
+            setPens(result.data);
+        };
+
+        fetchPens();
+    }, []);
 
     return (
         <div className="App">
